@@ -84,6 +84,12 @@ public:
         posArr = new PosPtr[arraySize];
     }
 
+    /** Right now disable all copy and move constructors, re-add them in the future */
+    explicit LRUCache(const LRUCache &) = delete;
+    LRUCache & operator=(const LRUCache &) = delete;
+    LRUCache(LRUCache &&) = delete;
+    LRUCache & operator=(LRUCache &&) = delete;
+
     ~LRUCache() {
         delete[] posArr;
     }
